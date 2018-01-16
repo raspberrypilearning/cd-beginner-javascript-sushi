@@ -28,11 +28,11 @@ title: Creating a free account on Trinket
 You don't have to have an account on Trinket to work with these cards.
 However, having one allows you to access your work easily from any computer. It also allows you to save a copy of a project somebody else has shared with you so you can make your own changes to it!
 
-+ Go to [dojo.soy/trinket](http://dojo.soy/trinket) and click "Sign Up For Your Free Account" if you do not already have an account. You will need an email address to sign up. 
++ Go to [dojo.soy/trinket](http://dojo.soy/trinket) and click **Sign Up For Your Free Account** if you do not already have an account. You will need an email address to sign up. 
 
 + Enter your email address and choose a password, or ask somebody to do this for you.
 
- You can now access all your saved or remixed projects by clicking on your username and going to "My Trinkets".
++ You can now access all your saved or remixed projects by clicking on your username and going to **My Trinkets**.
 
 !["My Trinkets" menu item](images/MyTrinketsMenuWide.png)
 
@@ -50,11 +50,12 @@ These cards are designed to follow on from the beginner HTML Sushi Cards, but do
    </html>
 ```
 
-All you have there is the basic HTML code for a page with a `div` \(division\) element with an `id` attribute where the `div` is called "jsSpace". What you need to do now is include a few JavaScript files on the page. You do that using the `script` tag with the `src` attribute set to the name of your file. You've got three JavaScript files:
+All you have there is the basic HTML code for a page with a `div` \(division\) element with an `id` attribute where the `div` is called `jsSpace`. 
 
-  * `techie-functions`—Some of my code that you don't need to change, but feel free to take a look to understand how it's working
-  * `functions.js`—Some of my code that you'll need to make some changes to over the course of these Sushi Cards
-  * `my-script.js`—Where you'll be writing most of your code
++ What you need to do now is include a few JavaScript files on the page. You do that using the `script` tag with the `src` attribute set to the name of your file. You've got three JavaScript files:
+  `techie-functions`—Some of my code that you don't need to change, but feel free to take a look to understand how it's working
+  `functions.js`—Some of my code that you'll need to make some changes to over the course of these Sushi Cards
+  `my-script.js`—Where you'll be writing most of your code
 
 + The order you add the `script` tags in is important because you need to load a piece of code before you can use it. You'll need to load them in the order listed above, like so:
 
@@ -69,11 +70,13 @@ All you have there is the basic HTML code for a page with a `div` \(division\) e
     </html>
 ```
 
-+ If you look in the preview of the page, you'll see that there's actually nothing visible on it right now! You're going to use JavaScript to insert HTML into the page. Specifically, you'll need to:
-  * Get some song information from the internet
-  * Display the names of the songs
-  * Create a music player (it'll be invisible, but you'll hear it just fine!)
-  * Let the user choose which song to play on that player
++ If you look in the preview of the page, you'll see that there's actually nothing visible on it right now!
+
+You're going to use JavaScript to insert HTML into the page. Specifically, you'll need to:
+  1. Get some song information from the internet
+  2. Display the names of the songs
+  3. Create a music player (it'll be invisible, but you'll hear it just fine!)
+  4. Let the user choose which song to play on that player
   
 You'll start to do all of this on the next card.
 
