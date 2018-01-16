@@ -12,5 +12,9 @@ technologies: "electronics, sense-hat, physical computing, html/css, scratch, py
 site_areas:
 steps:
   - title: Introduction
-  - title: What you will need
-  - title: Step title
+  - title: Getting started
+  - title: Your first JavaScript
+  - title: Better song listings
+  - title: Better—or at least different—songs
+  - title: As many songs as you like
+  - title: Cleaning things up

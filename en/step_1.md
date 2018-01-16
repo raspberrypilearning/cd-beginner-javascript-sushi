@@ -1,6 +1,6 @@
 ## Introduction
 
-Add project description here. What will learners be making?
+In these Sushi Cards you'll be learning JavaScript—one of the world's most popular programing languages. You probably use things built with it every day. It's in every major website, including YouTube, Facebook, Instagram and Google. It's also in lots of mobile apps and browser games.
 
 ### What you will make
 
