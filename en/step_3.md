@@ -1,40 +1,95 @@
-## Your first JavaScript
+## Changing a button's colour
+Since the whole game is based on having different coloured buttons, you're going to need a way to change a button's colour! 
 
-JavaScript code is normally made up of **functions**: sets of instructions joined together with a name. Think of something like making a cup of tea as a **function**: 
+Colours on computers are made up of three different values — for red, green, and blue — that are mixed together to form the 16777216 colours that a computer can display. Each value is between 0 and 255. So what you need to be able to do is take those three numbers and tell the button you want to change to use them as its background colour.
+
+Because you will need to do this a few times, you want to teach JavaScript to do most of the work for you, using a **function**.
+
+--- collapse ---
+---
+title: What is a function?
+---
+Code is normally made up of functions — sets of instructions joined together with a name. T hink of something like making a cup of tea as a function: 
 
   1. Get kettle
   2. Put water in kettle
   3. Boil water
   4. Get teapot
   5. Put teabag in teapot
-  6. Put water in  teapot
+  6. Put water in teapot
   7. Wait...
   8. Get cup
   9. Pour tea into cup
   
-That's a lot of steps! It's much easier to teach someone how to make a cup of tea once and then just ask them to do that in future! It's the same with JavaScript. We use functions to do sometimes pretty complex things with simple commands. The great thing is that **you** don't have to write the function to use it. So to start with, use a few of mine by updating your `my-script.js` file to look like this:
+That's a lot of steps! Imagine having to tell someone to do each of them every time you wanted them to make tea! It's much easier to teach someone how to make a cup of tea once and then just ask them to 'make tea' in future! It's the same with code: We can use functions to do complex things with simple commands.
 
-```javascript
-  getSongs()
-  
-  whenSongsReadyDo(
-    function(){
-      var mySongs = getSongTitlesAndArtists()
-      displaySongsList(mySongs)
-      setupPlayer()
-    }
-  )
+--- /collapse ---
+
+--- task ---
+Your function needs to be able to:
+
+ - Take a button
+ - Take a value for each of red, green, and blue
+ - Use those values to make a colour
+ - Assign that colour as the background colour of the button
+
+The actual colour change is done by changing the **CSS** style rule for the button.
+
+Add this code to your `script.js` file.
+```JavaScript
+function setButtonColour(button, red, green, blue){
+    button.setAttribute('style',
+                        'background-color: rgb('+ red +','+ green +','+ blue +');'
+                       );
+}
+```
+--- /task ---
+
+Now, before you can use your function, you need a button to point it to! All the `button` tags in the HTML file you started with have been given the `class` 'colourButton'. You can use this to select them as a group and then choose one to test your function on.
+
+--- task ---
+At the start of your `script.js` file, add this line to get all the buttons and store them in a variable called `buttons`:
+
+```JavaScript
+var buttons = document.getElementsByClassName('colourButton');
+```
+--- /task ---
+
+What you've got is called an **array**: a variable that's a list of things, in this case anything with the class `colourButton` on the page. You can read what's in any position of the arry using square brackets `[]` and the position of the item you're looking for. Since JavaScript starts counting from zero, you can get the first item in the array like this:
+
+```JavaScript
+buttons[0]
 ```
 
-What's happening here is your code asks the internet for some songs with `getSongs()`. Then it checks if the songs have arrived yet with `whenSongsReadyDo()` and, once they've arrived, runs the **function** inside it, which is the rest of the code for your program.
-That code does three things:
-  * It gets a list of songs and stores them in a container, which we call a **variable** called “mySongs”.
-  * It gives the list in “mySongs” to a function that displays them by creating some HTML
-  * It creates a music player and sets it to react to clicks on the songs
+--- task ---
+Below where you created your `buttons` variable, add this line of code that takes the first button and changes the colour to blue using your `setButtonColour` function:
 
-+ Now switch to the `index.html` file and look at the preview window. You'll see that there's a song title there—“Yesterday”—and a play button. If you click the button, the song will play. This is great, but it's not a lot of use for a few reasons. You're going to fix them on the next few cards:
-  * First, “Yesterday” is one of the most recorded songs in history and there's no way of telling whose version this is!
-  * Second, it only shows one song, even though there are lots of versions of “Yesterday”
-  * Third, you probably want to have cooler music on your webpage, so you'll need to search for something else!
-  
-  Time for you to improve on my **function**!
+```JavaScript
+setButtonColour(buttons[0], 0, 0, 255);
+```
+--- /task ---
+
+Now reload the page and check that it changes colour!
+
+--- challenge ---
+
+## Challenge: Pick your own colours
+
+Using your `setButtonColour` function try changing the colour of the button to some of these:
+  - Green
+  - Purple
+  - Yellow
+
+--- hints ---
+--- hint ---
+Changing the values of `red`, `green`, and `blue` that you pass to `setButtonColour` will change the colour of the button.
+--- /hint ---
+--- hint ---
+Colour values go from `0` to `255`. You're mixing light, not paint, so some of the results might not be what you expect!
+--- /hint ---
+--- hint ---
+Green is one of the three primary colours you're mixing. Purple and yellow can be found by mixing two of the three in equal amounts.
+--- /hint ---
+--- /hints ---
+
+--- /challenge ---

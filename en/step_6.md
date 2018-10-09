@@ -1,46 +1,77 @@
-## As many songs as you like
+## Picking & checking the answer
 
-Now you need to make the page display more than one song. You can do that by opening up `functions.js` and changing `displaySongList ()` to include a **loop** that repeats the same code until you have no more songs. The kind of **loop** you'll be using is called a **while loop**. It does the same thing over and over while a condition is true. By being clever with **variables**, you can make it display every song on the list. 
+Now your game is randomising the colours every time it reloads, you need to pick one colour to be the winning answer and make sure that when the player clicks on the right button, they know they've won.
 
-+ So, to begin with, make a couple of variables. Add them in just below the line that creates the `ul`, like this:
+To do this you need to:
 
-```javascript
-  var songsListDisplay = document.createElement ('ul')
+ - Pick a colour to be the right answer
+ - Display the rgb values for that colour to the user
+ - Make sure that when the winning button is clicked, the user gets some sort of message about it
 
-  var songsDisplayed = 0
-  var songsToDisplay = songsList.length
+The easiest way to pick a colour to be the right answer is to pick a _button_ to be the right answer and just use its colour.
+
+--- task ---
+You already know how to pick a number at random, so pick a number that could be the position of a button in `buttons`.
+
+Add this code in just before your `for` loop.
+
+```JavaScript
+var answerButton = Math.round(Math.random() * buttons.length);
 ```
-  
-The variables are created using the `var` **keyword**. Every **variable** needs that before its name when it's created. The first **variable**, `songsListDisplay` is just holding a number. It's going to be used as a counter, and it's starting at `0`. JavaScript counts from 0 instead of 1. 
-  
-The second **variable** is more interesting. It's storing the length of the `songsList`, which is a **property** of the `songsList` you can ask it for. The way this **loop** is going to work, to display every song, is by keeping a count of how many songs it has displayed in `songsDisplayed` and comparing that to `songsToDisplay`. As long as the count is less than (`<`) the target number, it will keep going. 
+--- /task ---
 
-+ Add the **loop** in below the variables like this
+Next, you need to display the rgb values for that button. You'll have those three values during the `for` loop, as you're setting the colour of the button, so that's the right time to set the message too. Of course, you'll need to make sure that the message setting code only runs when the button is the `answerButton` your code has picked. This means you'll need to use an **if statement**. This is just a bit of code that only runs when a particular condition is true. Like with a `for` loop, an `if` statement's code is in braces (`{}`) following the condition.
 
-```javascript
-  var songsToDisplay = songsList.length
+--- task ---
+First, **delete** the line you wrote earlier to update the heading with your hello message. You're going to need to use the heading for the colours.
 
-  while(songsDisplayed < songsToDisplay){
-    var song = songsList[songsDisplayed]
-    songsDisplayed = songsDisplayed + 1
+Then update your `for` loop to add an `if` statement that checks if you're working with the `answerButton` and, if so, outputs the colours to your heading.
+
+It should look like this:
+
+```JavaScript
+for (var i = 0; i < buttons.length; i++) {
+
+  var red = makeColourValue();
+  var green = makeColourValue();
+  var blue = makeColourValue();
+
+  setButtonColour(buttons[i], red, green, blue);
+
+  if (i === answerButton) {
+    heading.innerHTML = `(${red}, ${green}, ${blue})`;
   }
+}
 ```
- 
-+ Look at how the `song` **variable** is created every time the **loop** runs. Because it is created in the **loop**, it is destroyed every time the loop ends.
+Notice how you can use `${red}` to include the value of the `red` variable inside your text string.
+--- /task ---
 
-There's a new bit of code there, populating the `song` **variable**: `songsList[songsDisplayed]`. The list of all the songs stored in the `songsList` **variable** is numbered from `0` to `(number of songs in list - 1)` and you can access the information about any song by using the square brackets `[ ]` with the right number in them. By using the value of `songsDisplayed` and changing that value by 1 every time the loop runs, you move one step down the list every pass (called an **iteration**) through the loop.
+Now, you need to check, when the user clicks a button, whether they've clicked the winning button or any other button and let them know if they got the answer right or wrong. To do this you'll need to add an **event listener** to each of the buttons. These tell JavaScript to 'listen' for something to happen, in this case a click on the button, and then run a particular fucntion.
 
-+ Take a look, too, at how the value of `songsDisplayed` is changed. Notice that we can add one to its current value and then store it back into itself. Also, notice how important the right order of the lines is here. If they were reversed, the first song would never be displayed!
- 
-+ There's one thing still missing here: The line that actually displays the song! Find these lines after the end of the **loop**:
+--- task ---
+First, before your `for` loop starts, add a line to get the element you're going to use to tell the player if they've won. This is exactly like the way you got the heading a few steps back.
 
-```javascript
-  var song = songsList[0]
-  songsListDisplay.appendChild(buildSongDisplay(song))
+```JavaScript
+var answerMessage = document.getElementById('answer');
 ```
-  
-+ Delete the first one. You don't need it anymore as you are creating the `song` **variable** inside the **loop**. Cut (`ctrl+x` on Windows, `cmd+x` on a Mac) the second line and paste (`ctrl+v` on Windows, `cmd+v` on a Mac) it as the last line inside your **while loop**.
-  
-+ Now reload `music.html` and watch all the songs appear! 
+--- /task ---
 
-  
+Finally, inside the `for` loop, add a some code to connect a listener for clicks and give that listener a function to run when it 'hears' one.
+
+--- task ---
+This function combines a few things:
+ - An `if` statement, although this one includes an `else` afterwards that runs only if the condition is false
+ - Using `innerHTML` to update the text of an element on the page
+ - The special `this` keyword that means, in this case, 'the button that was clicked'.
+
+```JavaScript
+buttons[i].addEventListener('click', function(){
+        if (this === buttons[answerButton]) {
+            answerMessage.innerHTML = "Correct!";
+        } else {
+            answerMessage.innerHTML = "Wrong answer! Guess again!";
+        }
+    });
+```
+--- /task ---
+Now reload the page and play! For now, you'll have to reload the page every time you get it right and want a new colour.

@@ -1,66 +1,63 @@
-## Cleaning things up
+## Resetting the game
 
-You're almost done, but some of that code you started out with is a little messy. Now that you understand more of how **functions** work, you can clean it all up. You're going to create a pair of **functions** to replace all the code in the `my-script.js` file. 
+It's not great that you have to reload the page to reset the game, but you can fix that! You can use the reset button that's on the page to reset the game, once you connect a listener to the button and wrap your game code up in a function for that listener to call.
 
-+ First, make a function called `loadSongsToPage ()` and cut and paste the three lines inside the nameless \(anonymous\) **function** that's in `whenSongsReadyDo ()` so that your file looks like this:
+--- task ---
+Take the code that needs to run to reset the game — the answer button picker and the `for` loop — and put them in a function called `startGame`, like this:
 
-```javascript
-  getSongs('U2', 3)
+```JavaScript
+function startGame() {
 
-  function loadSongsToPage (){
-    var mySongs = getSongTitlesAndArtists()
-    displaySongsList(mySongs)
-    setupPlayer()
-  }
+  var answerButton = Math.round(Math.random() * buttons.length);
 
-  whenSongsReadyDo(
-    function(){
+  for (var i = 0; i < buttons.length; i++) {
 
+    var red = makeColourValue();
+    var green = makeColourValue();
+    var blue = makeColourValue();
+
+    setButtonColour(buttons[i], red, green, blue);
+
+    if (i === answerButton) {
+      heading.innerHTML = `(${red}, ${green}, ${blue})`;
     }
-  )
-```
 
-+ Next, replace the anonymous **function** with your new one, like so:
+    buttons[i].addEventListener('click', function(){
+        if (this === buttons[answerButton]) {
+            answerMessage.innerHTML = "Correct!";
+        } else {
+            answerMessage.innerHTML = "Wrong answer! Guess again!";
+        }
+    });
 
-```javascript
-  whenSongsReadyDo(loadSongsToPage)
-```
-
-That looks a little neater and is a bit clearer about what's going on. Because the **functions** are well named, you can read what's happening almost like a sentence.
-
-+ Now, wrap everything up in a function called `putMusicOnThePage ()` like this:
-
-```javascript
-  function loadSongsToPage (){
-  var mySongs = getSongTitlesAndArtists()
-  displaySongsList(mySongs)
-  setupPlayer()
   }
 
-  function putMusicOnThePage (){
-    getSongs('U2', 3)
-    whenSongsReadyDo(loadSongsToPage())
-  }
-
-  putMusicOnThePage()
+}
 ```
+--- /task ---
 
-+ Load the HTML page and check it all still works. It's nice, but you can make it even better. Just add a couple of parameters to your `putMusicOnThePage ()` function for the search query and the number of songs, like so:
+Reload the page and see what happens now. Nothing seems to be working… why is that? It's because, just like all the other functions you've created, you need to call `startGame` so as your game will, in fact, start.
 
-```javascript
-  function putMusicOnThePage (query, songCount){
-    getSongs(query, songCount)
-    whenSongsReadyDo(loadSongsToPage)
-  }
+--- task ---
+Add a line at the _very end_ of your program to call the `startGame` function.
 
-  putMusicOnThePage('U2', 3)
+```JavaScript
+startGame();
 ```
+--- /task ---
 
-Your code still does the same thing, but now any programmer can come along and use it to put music on the page without needing to worry about exactly how that works. They just write one line and it appears! You've been doing this all along, with your **functions** calling the **functions** we wrote together \(like `displaySongsList ()`\) and calling my **functions**. You didn't need to know how mine worked, you just need to know what to give them and what to expect them to **return**.
+Finally, you need to connect a listener on the reset button to `startGame`. You've done this a few times now, so if you want to just try before looking at the instructions, take a shot at it!
 
-That's the real power of **functions** in programing—you break up the pieces so things can happen or change inside one piece \(or one programer's work\) without the other pieces \(or programers\) needing to know or care as long as the same information going into a **function** still leads to the same effects coming out.
+--- task ---
+Connecting the reset button involves two steps:
+ - Select the button using its `id` of 'reset'
+ - Attach a click listener to the button that will run the `startGame` function when it's clicked
 
-This is amazingly powerful and you'll see it in the rest of the Sushi Cards. You'll also be able to do it yourself if you try working with other Ninjas in your Dojo on a project together: You can write your own **functions**, in your own `.js` files and, as long as you've all planned in advance what input should get what output, you should be able to use each other's code by combining them in one HTML file like you did back on the first card in this series!
+Add this line to the the end of your program to do that:
+```JavaScript
+document.getElementById('resetButton').addEventListener('click', startGame);
+```
+Also, notice how, because you don't need the button again, this time the code skips the step of storing the button in a variable and just directly attaches the listener to the selected button.
+--- /task ---
 
-
-
+Now check out your game! Once you've gotten the right answer click the reset button and check everything works like it should.
