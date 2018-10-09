@@ -10,11 +10,10 @@ version: 3
 last_tested: 2017-01-01
 steps: 
 - title: Introduction
-- title: Getting started
-- title: Setting text
-- title: Setting colours 
-- title: Random colours
-- title: Looping over a list
-- title: Picking and checking the answer
+- title: Using JavaScript to change a webpage
+- title: Changing a button's colour
+- title: Random colours 
+- title: Changing all the buttons
+- title: Picking & checking the answer
 - title: Resetting the game
-- title: Challenge — Background colour to winning colour then back to white on reset
+- title: Challenge!
