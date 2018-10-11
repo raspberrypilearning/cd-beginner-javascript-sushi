@@ -18,6 +18,7 @@ for (var i = 0; i < buttons.length; i++) {
 ```
 --- /task ---
 Reload the page a few times and watch those buttons change. Notice that, while you know (because you wrote it that way) that the change is happening one button after the other, it's happening so fast you can't actually see that!
+
 --- collapse ---
 ---
 title: How the for loop works
@@ -29,4 +30,3 @@ A `for` loop has four parts:
  - The actual code that the loop runs, contained inside the braces `{}`. This can be anything you want, and it has access to the current value of the loop variable, which is how you can use it to 'loop over' an array.
  - Back up at the top of the loop is the final piece, a little bit of code that runs once the loop has successfully completed. Usually, this is just adding one to the loop variable you're using to count your progress and that's exactly what this is here too: `i++` is just a shortcut for `i = i + 1`.
 --- /collapse ---
-
