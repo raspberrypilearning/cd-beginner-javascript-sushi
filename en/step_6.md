@@ -1,33 +1,9 @@
-## Picking & checking the answer
+## Changing all the buttons
 
-Now your game is randomising the colours every time it reloads, you need to pick one colour to be the winning answer and make sure that when the player clicks on the right button, they know they've won.
-
-To do this you need to:
-
- - Pick a colour to be the right answer
- - Display the rgb values for that colour to the user
- - Make sure that when the winning button is clicked, the user gets some sort of message about it
-
-The easiest way to pick a colour to be the right answer is to pick a _button_ to be the right answer and just use its colour.
+Now one button is changing at random, but you want to have all six of them change. Luckily, you don't have to write your code out six times! You can use a **loop** — in this case a `for` loop, which does something a particular number of times — to have JavaScript repeat it, but change one small thing: the number in the square brackets on the `buttons` array. This means that each button in turn will be assigned a totally random colour without you having to worry about how many there are. If you added another three buttons, or another thousand, it would take the same amount of code!
 
 --- task ---
-You already know how to pick a number at random, so pick a number that could be the position of a button in `buttons`.
-
-Add this code in just before your `for` loop.
-
-```JavaScript
-var answerButton = Math.round(Math.random() * buttons.length);
-```
---- /task ---
-
-Next, you need to display the rgb values for that button. You'll have those three values during the `for` loop, as you're setting the colour of the button, so that's the right time to set the message too. Of course, you'll need to make sure that the message setting code only runs when the button is the `answerButton` your code has picked. This means you'll need to use an **if statement**. This is just a bit of code that only runs when a particular condition is true. Like with a `for` loop, an `if` statement's code is in braces (`{}`) following the condition.
-
---- task ---
-First, **delete** the line you wrote earlier to update the heading with your hello message. You're going to need to use the heading for the colours.
-
-Then update your `for` loop to add an `if` statement that checks if you're working with the `answerButton` and, if so, outputs the colours to your heading.
-
-It should look like this:
+Take your existing code for choosing and setting the colour of a button and wrap a `for` loop around it, using the **loop variable** — normally named `i` (because it's an **i**ntiger) — to pick which of the elements of the `buttons` array you're changing.
 
 ```JavaScript
 for (var i = 0; i < buttons.length; i++) {
@@ -35,43 +11,26 @@ for (var i = 0; i < buttons.length; i++) {
   var red = makeColourValue();
   var green = makeColourValue();
   var blue = makeColourValue();
-
+  
   setButtonColour(buttons[i], red, green, blue);
 
-  if (i === answerButton) {
-    heading.innerHTML = `(${red}, ${green}, ${blue})`;
-  }
 }
 ```
-Notice how you can use `${red}` to include the value of the `red` variable inside your text string.
 --- /task ---
+Reload the page a few times and watch those buttons change. 
 
-Now, you need to check, when the user clicks a button, whether they've clicked the winning button or any other button and let them know if they got the answer right or wrong. To do this you'll need to add an **event listener** to each of the buttons. These tell JavaScript to 'listen' for something to happen, in this case a click on the button, and then run a particular fucntion.
+![All of the buttons have changed to different colours.](images/1blue.png)
 
---- task ---
-First, before your `for` loop starts, add a line to get the element you're going to use to tell the player if they've won. This is exactly like the way you got the heading a few steps back.
+Notice that, while you know (because you wrote it that way) that the change is happening one button after the other, it's happening so fast you can't actually see that!
 
-```JavaScript
-var answerMessage = document.getElementById('answer');
-```
---- /task ---
+--- collapse ---
+---
+title: How the for loop works
+---
+A `for` loop has four parts:
 
-Finally, inside the `for` loop, add a some code to connect a listener for clicks and give that listener a function to run when it 'hears' one.
-
---- task ---
-This function combines a few things:
- - An `if` statement, although this one includes an `else` afterwards that runs only if the condition is false
- - Using `innerHTML` to update the text of an element on the page
- - The special `this` keyword that means, in this case, 'the button that was clicked'.
-
-```JavaScript
-buttons[i].addEventListener('click', function(){
-        if (this === buttons[answerButton]) {
-            answerMessage.innerHTML = "Correct!";
-        } else {
-            answerMessage.innerHTML = "Wrong answer! Guess again!";
-        }
-    });
-```
---- /task ---
-Now reload the page and play! For now, you'll have to reload the page every time you get it right and want a new colour.
+ - The loop variable, which is usually created at the start of the loop and used to count the number of times the loop code has run. This is usually called `i` and is created with the `var i = 0;` piece of the loop code.
+ - The test, which is checked to decide whether to run the loop code or not. It's usually something like 'Is the loop variable five or bigger?' or 'Is the loop counter smaller than the number of items in a particular array?'. If the test is true then the loop runs and comes back to the test again. If the test is false then all of the remaining loop code is skipped over and the program continues. In the case of this `for` loop it's the second question —  `i < buttons.length;` —'Is the loop counter smaller than the number of items in a particular array?', in this case the `buttons` array. Notice the `buttons.length` property that tells us how many items are in `buttons`.
+ - The actual code that the loop runs, contained inside the braces `{}`. This can be anything you want, and it has access to the current value of the loop variable, which is how you can use it to 'loop over' an array.
+ - Back up at the top of the loop is the final piece, a little bit of code that runs once the loop has successfully completed. Usually, this is just adding one to the loop variable you're using to count your progress and that's exactly what this is here too: `i++` is just a shortcut for `i = i + 1`.
+--- /collapse ---

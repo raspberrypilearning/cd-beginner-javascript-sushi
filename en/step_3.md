@@ -1,29 +1,9 @@
 ## Changing a button's colour
-Since the whole game is based on having different coloured buttons, you're going to need a way to change a button's colour! 
+At the moment, all the buttons on the page are red. Since the whole game is based on having different coloured buttons, you're going to need a way to change a button's colour! 
 
-Colours on computers are made up of three different values — for red, green, and blue — that are mixed together to form the 16777216 colours that a computer can display. Each value is between 0 and 255. So what you need to be able to do is take those three numbers and tell the button you want to change to use them as its background colour.
+Colours on computers are made up of three different values — for red, green, and blue — that are mixed together to form the 16777216 colours that a computer can display. Each value is between 0 and 255. For example, red is (255,0,0), green is (0,255,0) and blue is (0,0,255). Purple, as a mix of red and blue, is (255,0,255). White is all three colours at full brightness (255,255,255) and black is all three at zero brightness (0,0,0). So what you need to be able to do is take those three numbers and tell the button you want to change to use them as its background colour.
 
 Because you will need to do this a few times, you want to teach JavaScript to do most of the work for you, using a **function**.
-
---- collapse ---
----
-title: What is a function?
----
-Code is normally made up of functions — sets of instructions joined together with a name. T hink of something like making a cup of tea as a function: 
-
-  1. Get kettle
-  2. Put water in kettle
-  3. Boil water
-  4. Get teapot
-  5. Put teabag in teapot
-  6. Put water in teapot
-  7. Wait...
-  8. Get cup
-  9. Pour tea into cup
-  
-That's a lot of steps! Imagine having to tell someone to do each of them every time you wanted them to make tea! It's much easier to teach someone how to make a cup of tea once and then just ask them to 'make tea' in future! It's the same with code: We can use functions to do complex things with simple commands.
-
---- /collapse ---
 
 --- task ---
 Your function needs to be able to:
@@ -44,6 +24,26 @@ function setButtonColour(button, red, green, blue){
 }
 ```
 --- /task ---
+
+--- collapse ---
+---
+title: What is a function?
+---
+Code is normally made up of functions — sets of instructions joined together with a name. Think of something like making a cup of tea as a function: 
+
+  1. Get kettle
+  2. Put water in kettle
+  3. Boil water
+  4. Get teapot
+  5. Put teabag in teapot
+  6. Put water in teapot
+  7. Wait...
+  8. Get cup
+  9. Pour tea into cup
+  
+That's a lot of steps! Imagine having to tell someone to do each of them every time you wanted them to make tea! It's much easier to teach someone how to make a cup of tea once and then just ask them to 'make tea' in future! It's the same with code: We can use functions to do complex things with simple commands.
+
+--- /collapse ---
 
 Now, before you can use your function, you need a button to point it to! All the `button` tags in the HTML file you started with have been given the `class` 'colourButton'. You can use this to select them as a group and then choose one to test your function on.
 
@@ -69,27 +69,6 @@ setButtonColour(buttons[0], 0, 0, 255);
 ```
 --- /task ---
 
-Now reload the page and check that it changes colour!
+Now watch as your button changes colour! If you're working offline you'll need to reload the page in your browser to make this happen.
 
---- challenge ---
-
-## Challenge: Pick your own colours
-
-Using your `setButtonColour` function try changing the colour of the button to some of these:
-  - Green
-  - Purple
-  - Yellow
-
---- hints ---
---- hint ---
-Changing the values of `red`, `green`, and `blue` that you pass to `setButtonColour` will change the colour of the button.
---- /hint ---
---- hint ---
-Colour values go from `0` to `255`. You're mixing light, not paint, so some of the results might not be what you expect!
---- /hint ---
---- hint ---
-Green is one of the three primary colours you're mixing. Purple and yellow can be found by mixing two of the three in equal amounts.
---- /hint ---
---- /hints ---
-
---- /challenge ---
+![The first button has changed from red to blue. The other five buttons remain red.](images/1blue.png)

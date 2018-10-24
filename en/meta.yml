@@ -12,8 +12,11 @@ steps:
 - title: Introduction
 - title: Using JavaScript to change a webpage
 - title: Changing a button's colour
+- title: "Challenge: Pick your own colours"
+  challenge: true
 - title: Random colours 
 - title: Changing all the buttons
 - title: Picking & checking the answer
 - title: Resetting the game
-- title: Challenge!
+- title: "Challenge: Fill the page with the winning colour"
+  challenge: true
