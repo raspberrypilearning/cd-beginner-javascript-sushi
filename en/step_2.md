@@ -1,4 +1,4 @@
-## Getting started
+## Get started
 
 Go to [dojo.soy/js-colours](http://dojo.soy/js-colours). You will see a box containing an example website project. On the right-hand side is a website, and on the left-hand side is the code that makes the website.
 
