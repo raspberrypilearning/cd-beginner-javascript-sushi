@@ -1,6 +1,6 @@
 title: Colour guesser
 hero_image: images/banner.png
-description: Make a game where you 
+description: Make a game where you pick the right colour, to start learning JavaScript
 theme: yellow # possible values: blue, green, navy, orange, red, turquoise, violet, yellow
 duration: 2
 listed: false
@@ -10,13 +10,13 @@ version: 3
 last_tested: 2017-01-01
 steps: 
 - title: Introduction
-- title: Using JavaScript to change a webpage
-- title: Changing a button's colour
-- title: "Challenge: Pick your own colours"
+- title: Get started
+- title: Change a button's colour
+- title: "Challenge: pick your own colours"
   challenge: true
 - title: Random colours 
-- title: Changing all the buttons
-- title: Picking & checking the answer
-- title: Resetting the game
-- title: "Challenge: Fill the page with the winning colour"
+- title: Change all the buttons
+- title: Pick and check the answer
+- title: Reset the game
+- title: "Challenge: fill the page with the winning colour"
   challenge: true
