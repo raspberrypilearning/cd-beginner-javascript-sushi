@@ -78,7 +78,7 @@ You'll also see **attributes** in the tags. For example, `id`, which is a unique
 The first thing you need to do is choose an element of the web page using your JavaScript code in `script.js`. You will use the element several times in your code, so you need to store it in a **variable**. You can think of a variable as a box for storing things. It has a label (the variable's name) on the outside, and you can use that label to get the box and look at, or change, the thing in it.
 
 --- task ---
-Open `script.js` and add these lines of code to: 
+Go to the `script.js` tab and add these lines of code to: 
  - Create a variable called `heading`
  - Select the element on the web page that has an `id` of `colourValue` (one of the headings has this `id`), and store the element in the `heading` variable
 

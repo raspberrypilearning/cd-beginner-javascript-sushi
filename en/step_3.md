@@ -27,7 +27,7 @@ Code is often made up of functions, which are sets of instructions joined togeth
   4. Get teapot
   5. Put teabag in teapot
   6. Put water in teapot
-  7. Wait...
+  7. Wait
   8. Get cup
   9. Pour tea into cup
   

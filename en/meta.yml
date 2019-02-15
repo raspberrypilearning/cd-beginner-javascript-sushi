@@ -18,5 +18,5 @@ steps:
 - title: Change all the buttons
 - title: Pick and check the answer
 - title: Reset the game
-- title: "Challenge: fill the page with the winning colour"
+- title: "Challenge: fill the web page with the winning colour"
   challenge: true

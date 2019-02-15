@@ -1,16 +1,18 @@
-## Challenge: Fill the page with the winning colour
+## Challenge: fill the web page with the winning colour
 
-Now that you've built your game, here's a challenge for you: Using what you've learned, can you fill the page will the winning colour when the player chooses it correctly? 
+Your game works now, so here's a challenge for you: using your new coding knowledge, can you fill the web page with the winning colour when the player clicks the correct button? 
 
-You'll need to know two new things to manage this. First, the whole of the page is contained in the `body` tag of the HTML file. Second, just like you can select by `id` and by `class`, you can select by `tagName`. Just like classes, there can be more than one result (although, in the case of the `body` tag, there will only ever be one), so you'll get an `array` back.
+You need to know two other things to meet this challenge:
+1. The whole of the web page is contained in the `body` tag of the HTML file
+1. Just like you can select page elements by `id` and by `class`, you can select elements by `tagName`. And just like when you select by `class`, selecting by `tagName` can mean you select more than one element, so you'll get an array back (although in the case of the `body` tag, there will only ever be one element with that `tagName`).
 
-So, using `document.getElementsByTagName()` can you change the background of the page to the winning colour when the player chooses it correctly?
+Now try to use `document.getElementsByTagName()` to change the background of the page to the winning colour when the player clicks the correct button!
 
 --- hints ---
 --- hint ---
-Remember how you changed the colour of a button? You can use the same function to change the body's background colour.
+Remember that you already have a function for setting button colours? You can use the same function to change the background colour of the page `body`.
 --- /hint ---
 --- hint ---
-Update the background colour at the same time as updating the message to the user telling them they've won.
+Update the background colour at the same time the message to the player gets updated.
 --- /hint ---
 --- /hints ---

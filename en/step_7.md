@@ -1,32 +1,41 @@
-## Picking & checking the answer
+## Pick and check the answer
 
-Now your game is randomising the colours every time it reloads, you need to pick one colour to be the winning answer and make sure that when the player clicks on the right button, they know they've won.
+Your game now picks random colours every time it reloads. Next, you need to pick one colour to be the winning answer and make it so that, when the player clicks on the correct button, they get told that they've won.
 
 To do this you need to:
 
- - Pick a colour to be the right answer
- - Display the rgb values for that colour to the user
- - Make sure that when the winning button is clicked, the user gets some sort of message about it
+ - Pick one of the random colours as the correct answer
+ - Display the RGB colour values of that colour to the player
+ - Make sure that when the player clicks on the winning button, a message tells them that they have won
 
-The easiest way to pick a colour to be the right answer is to pick a _button_ to be the right answer and just use its colour.
+The easiest way do the first two things is to pick a random __button__ as the correct answer, and to display its colour values.
+
+First, pick a button.
 
 --- task ---
-You already know how to pick a number at random, so pick a number that could be the position of a button in `buttons`.
+You already know how to pick a number at random, so now pick a number that describes the position of an item in the `buttons` array.
 
-Add this code in just before your `for` loop.
+Add this code just above your `for` loop:
 
 ```JavaScript
 var answerButton = Math.round(Math.random() * buttons.length);
 ```
+
+This line creates a variable called `answerButton` that stores the random number.
 --- /task ---
 
-Next, you need to display the rgb values for that button. You'll have those three values during the `for` loop, as you're setting the colour of the button, so that's the right time to set the message too. Of course, you'll need to make sure that the message setting code only runs when the button is the `answerButton` your code has picked. This means you'll need to use an **if statement**. This is just a bit of code that only runs when a particular condition is true. Like with a `for` loop, an `if` statement's code is in braces (`{}`) following the condition.
+Next, you need to display the RGB colour values of that button.
+
+These three values get created in the `for` loop runs that sets the button's colour, so that's the right time to get your code to display the values. And you need to make sure that the colour values only get displayed if the button the `for` loop is looping over is at position `answerButton` in the `buttons` array. To do that, you use an **`if` statement**.
+
+An `if` statement is a bit of code that tests a particular condition, and if the test is successful, the code inside the `if` statement runs. Like in a `for` loop, the code inside an `if` statement is in braces (`{}`) following the condition.
+
 --- task ---
-First, **delete** the line you wrote earlier to update the heading with your hello message. You're going to need to use the heading for the colours.
+First, **delete** the line of code you wrote earlier to update the web page heading with your hello message. You're going to need to display the colour values in the heading!
 --- /task ---
 
 --- task ---
-Then update your `for` loop to add an `if` statement that checks if you're working with the `answerButton` and, if so, outputs the colours to your heading.
+Then update your `for` loop to add an `if` statement that checks if the loop is working with the `answerButton`. If yes, then the `if` statement should display the colour values as the page heading.
 
 It should look like this:
 
@@ -44,26 +53,30 @@ for (var i = 0; i < buttons.length; i++) {
   }
 }
 ```
-Notice how you can use `${red}` to include the value of the `red` variable inside your text string.
+Notice that you can use `${red}` to include the value of the `red` variable inside your text string, and that the same is true for the other colour value variables.
 --- /task ---
 
-Now, you need to check, when the user clicks a button, whether they've clicked the winning button or any other button and let them know if they got the answer right or wrong. To do this you'll need to add an **event listener** to each of the buttons. These tell JavaScript to 'listen' for something to happen, in this case a click on the button, and then run a particular fucntion.
+Now you need to add code so that your game knows which button the player clicks and displays a message in response.
+
+The first thing to do is selecting the element on the web page where the message will show.
 
 --- task ---
-First, before your `for` loop starts, add a line to get the element you're going to use to tell the player if they've won. This is exactly like the way you got the heading a few steps back.
+Above your `for` loop, create a variable called `answerMessage` to store the element on the web page that has an `id` of `answer` (one of the headings has this `id`). Use this code to do that:
 
 ```JavaScript
 var answerMessage = document.getElementById('answer');
 ```
 --- /task ---
-
-Finally, inside the `for` loop, add a some code to connect a listener for clicks and give that listener a function to run when it 'hears' one.
+Next, each button needs an **event listener**. Event listeners are pieces of code that let your game wait for an action the player takes and then do something in response. You want your game to know if the player clicks a button, so the event listeners you need are going to wait for clicks.
 
 --- task ---
-This function combines a few things:
- - An `if` statement, although this one includes an `else` afterwards that runs only if the condition is false
- - Using `innerHTML` to update the text of an element on the page
- - The special `this` keyword that means, in this case, 'the button that was clicked'.
+
+Inside the `for` loop, insert the following code to add a listener for clicks to each button, and to give the listener a function to run when a click happens.
+
+The function includes a few things:
+ - An `if` statement, which you already understand, although this statement includes an `else` part that runs only if the test of the condition is unsuccessful
+ - `innerHTML` updates the text of the web page element stored in `answerMessage`
+ - The special `this` keyword, which means, in this case, 'the button that was clicked'
 
 ```JavaScript
 buttons[i].addEventListener('click', function(){
@@ -78,9 +91,9 @@ buttons[i].addEventListener('click', function(){
 
 --- collapse ---
 ---
-title: What it should all look like now
+title: What your code should look like now
 ---
-Just so you can see how it all fits together, right now your code should look like:
+Look at the following code to see how everything in the `script.js` program fits together:
 
 ```JavaScript
 function makeColourValue() {
@@ -127,10 +140,11 @@ buttons[i].addEventListener('click', function(){
 }
 ```
 
-And the game should look like this:
+
+Your game should look like this now:
 
 ![The game now shows six buttons of different colours, with a sequence of three comma-seperated numbers above them.](images/preReset.png)
 
 --- /collapse ---
 
-Now reload the page and play! For now, you'll have to reload the page every time you get it right and want a new colour.
+Reload the web page and play your game! At the moment, you have to reload the page every time you want to play a new round.

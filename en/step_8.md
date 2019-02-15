@@ -1,13 +1,14 @@
-## Resetting the game
+## Reset the game
 
-It's not great that you have to reload the page to reset the game, but you can fix that! You can use the reset button that's on the page to reset the game, once you connect a listener to the button and wrap your game code up in a function for that listener to call.
+At the moment, you have to reload your web page every time you want to reset the game. There is a **Reset game** button on the web page, but clicking the button doesn't have any effect.
+
+To make the button work, you are going to connect an event listener to it and wrap your game code up in a function for that listener to call.
 
 --- task ---
-Take the code that needs to run to reset the game — the answer button picker and the `for` loop — and put them in a function called `startGame`. You also need to empty out the `answerMessage` since the page won't be reloading the blank one anymore. You can do that by adding a single line at the very start of the `startGame` function.
+The game code needed to reset the game is the code that sets the `answerButton` variable, and the `for` loop. Take those piece of your code and put them in a function called `startGame`.
 
 ```JavaScript
 function startGame() {
-  answerMessage.innerHTML = "";
 
   var answerButton = Math.round(Math.random() * buttons.length);
 
@@ -37,28 +38,45 @@ function startGame() {
 ```
 --- /task ---
 
-Wait for the page to reload (or reload it if you're working offline) and see what happens now. Nothing seems to be working… why is that? It's because, just like all the other functions you've created, you need to call `startGame` so as your game will, in fact, start.
+If you reload the web page now, nothing seems to be working! That's because, just like all the other functions in your program, you need to **call** `startGame`, otherwise your game doesn't start.
 
 --- task ---
-Add a line at the _very end_ of your program to call the `startGame` function.
+Add a line __at the very end__ of your program to call the `startGame` function.
 
 ```JavaScript
 startGame();
 ```
 --- /task ---
 
-Finally, you need to connect a listener on the reset button to `startGame`. You've done this a few times now, so if you want to just try before looking at the instructions, take a shot at it!
+The `startGame` function also needs to clear the `answerMessage` element of the web page, so that there is no message when a new round of the game begins.
 
 --- task ---
-Connecting the reset button involves two steps:
- - Select the button using its `id` of 'reset'
- - Attach a click listener to the button that will run the `startGame` function when it's clicked
+To clear the element, add the following line **at the very beginning** of the `startGame` function.
 
-Add this line to the the end of your program to do that:
+```JavaScript
+answerMessage.innerHTML = "";
+```
+
+--- /task ---
+
+Clicking the **Reset game** button still doesn't do anything. That's because the button needs an event listener which calls `startGame`. You already know how to add event listeners to make buttons respond to clicks, so if you want to, you can try to do that by yourself, before looking at the instructions!
+
+--- task ---
+Making the **Reset game** button work involves two steps:
+ - Select the button using its `id`, which is `resetButton`
+ - Add a listener to the button to call the `startGame` function when the button is clicked
+
+Add this line to the end of your program to do that:
 ```JavaScript
 document.getElementById('resetButton').addEventListener('click', startGame);
 ```
-Also, notice how the listener just gets attached to the button here, without the button first being stored in a variable. I decided to code it this way because you won't need the reset button again, so you can save the memory used to store it, but the previous method of first storing it in a variable and then attaching a listener would work just fine too.
+
+Do you see that the listener gets added directly to the button here, without the button first being stored in a variable? 
+
+I decided to code it this way because the game code doesn't need the **Reset game** button in any other place, so I can save the memory necessary to store the variable.
+
+The other method of first storing the button in a variable and then adding a listener works just fine too.
+
 --- /task ---
 
-Now check out your game! Once you've gotten the right answer click the reset button and check everything works like it should.
+Now try out your game! When you get the right answer, click the **Reset game** button and check everything works like it should.
