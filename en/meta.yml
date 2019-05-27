@@ -1,4 +1,4 @@
-title: Colour guesser
+title: Guess the colour!
 hero_image: images/banner.png
 description: Make a game where you pick the right colour, to start learning JavaScript
 theme: yellow # possible values: blue, green, navy, orange, red, turquoise, violet, yellow
