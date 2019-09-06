@@ -126,7 +126,7 @@ var blue = makeColourValue();
 setButtonColour(buttons[i], red, green, blue);
 
 if (i === answerButton) {
-    heading.innerHTML =`(${red}, ${green}, ${blue})`;;
+    heading.innerHTML =`(${red}, ${green}, ${blue})`;
 }
 
 buttons[i].addEventListener('click', function(){
