@@ -18,7 +18,7 @@ You already know how to pick a number at random, so now pick a number that descr
 Add this code just above your `for` loop:
 
 ```JavaScript
-var answerButton = Math.round(Math.random() * buttons.length);
+var answerButton = Math.round(Math.random() * (buttons.length - 1));
 ```
 
 This line creates a variable called `answerButton` that stores the random number.
@@ -114,7 +114,7 @@ var heading = document.getElementById('colourValue');
 
 var answerMessage = document.getElementById('answer');
   
-var answerButton = Math.round(Math.random() * buttons.length);
+var answerButton = Math.round(Math.random() * (buttons.length - 1));
 
   
 for (var i = 0; i < buttons.length; i++) {

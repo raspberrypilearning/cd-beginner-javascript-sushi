@@ -10,7 +10,7 @@ The game code needed to reset the game is the code that sets the `answerButton` 
 ```JavaScript
 function startGame() {
 
-  var answerButton = Math.round(Math.random() * buttons.length);
+  var answerButton = Math.round(Math.random() * (buttons.length - 1));
 
   for (var i = 0; i < buttons.length; i++) {
 
