@@ -78,6 +78,7 @@ You'll also see **attributes** in the tags. For example, `id`, which is a unique
 The first thing you need to do is choose an element of the web page using your JavaScript code in `script.js`. You will use the element several times in your code, so you need to store it in a **variable**. You can think of a variable as a box for storing things. It has a label (the variable's name) on the outside, and you can use that label to get the box and look at, or change, the thing in it.
 
 --- task ---
+
 Go to the `script.js` tab and add these lines of code to: 
  - Create a variable called `heading`
  - Select the element on the web page that has an `id` of `colourValue` (one of the headings has this `id`), and store the element in the `heading` variable
@@ -91,6 +92,7 @@ heading = document.getElementById('colourValue');
 Great! Now you can change this element of the web page in your JavaScript code. Try out how that works by making the element say hello!
 
 --- task ---
+
 Below the line of code that stores the element in the variable `heading`, add this line to change the contents of the element:
 
 ```JavaScript

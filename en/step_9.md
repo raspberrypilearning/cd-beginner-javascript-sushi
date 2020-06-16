@@ -10,9 +10,13 @@ Now try to use `document.getElementsByTagName()` to change the background of the
 
 --- hints ---
 --- hint ---
+
 Remember that you already have a function for setting button colours? You can use the same function to change the background colour of the page `body`.
+
 --- /hint ---
 --- hint ---
+
 Update the background colour at the same time the message to the player gets updated.
+
 --- /hint ---
 --- /hints ---
