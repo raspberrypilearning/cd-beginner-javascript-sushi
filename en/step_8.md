@@ -5,6 +5,7 @@ At the moment, you have to reload your web page every time you want to reset the
 To make the button work, you are going to connect an event listener to it and wrap your game code up in a function for that listener to call.
 
 --- task ---
+
 The game code needed to reset the game is the code that sets the `answerButton` variable, and the `for` loop. Take those piece of your code and put them in a function called `startGame`.
 
 ```JavaScript
@@ -36,21 +37,25 @@ function startGame() {
 
 }
 ```
+
 --- /task ---
 
 If you reload the web page now, nothing seems to be working! That's because, just like all the other functions in your program, you need to **call** `startGame`, otherwise your game doesn't start.
 
 --- task ---
+
 Add a line __at the very end__ of your program to call the `startGame` function.
 
 ```JavaScript
 startGame();
 ```
+
 --- /task ---
 
 The `startGame` function also needs to clear the `answerMessage` element of the web page, so that there is no message when a new round of the game begins.
 
 --- task ---
+
 To clear the element, add the following line **at the very beginning** of the `startGame` function.
 
 ```JavaScript
@@ -62,11 +67,13 @@ answerMessage.innerHTML = "";
 Clicking the **Reset game** button still doesn't do anything. That's because the button needs an event listener which calls `startGame`. You already know how to add event listeners to make buttons respond to clicks, so if you want to, you can try to do that by yourself, before looking at the instructions!
 
 --- task ---
+
 Making the **Reset game** button work involves two steps:
  - Select the button using its `id`, which is `resetButton`
  - Add a listener to the button to call the `startGame` function when the button is clicked
 
 Add this line to the end of your program to do that:
+
 ```JavaScript
 document.getElementById('resetButton').addEventListener('click', startGame);
 ```

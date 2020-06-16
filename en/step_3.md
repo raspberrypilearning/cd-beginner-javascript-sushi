@@ -1,4 +1,5 @@
 ## Change a button's colour
+
 At the moment, all the buttons on the web page are red. The whole game is based on having different coloured buttons, so you need a way to change a button's colour! 
 
 Colours in computer programs are made up of three different values: R, G, and B, for red, green, and blue. Each value is between 0 and 255, and together, these three values define the 16777216 colours that a computer can display.
@@ -19,6 +20,7 @@ Because you need to do this a few times in the code for your game, you are going
 ---
 title: What is a function?
 ---
+
 Code is often made up of functions, which are sets of instructions joined together with a name. Why are functions useful? Think about all the steps involved in making a cup of tea: 
 
   1. Get kettle
@@ -38,6 +40,7 @@ With coding it is similar: you create functions to do complex things with simple
 --- /collapse ---
 
 --- task ---
+
 Your function needs to:
 
  - Take a button
@@ -46,6 +49,7 @@ Your function needs to:
  - Assign that colour as the background colour of the button
 
 Add this code to your `script.js` file to create this function using the name `setButtonColour`.
+
 ```JavaScript
 function setButtonColour(button, red, green, blue){
     button.setAttribute('style',
@@ -63,11 +67,13 @@ To use your function, you need to point it to a button.
 All the `button` tags in the HTML file have the `class` of `colourButton`. This `class` lets you select all the buttons as a group and then pick one for testing your function.
 
 --- task ---
+
 At the top of your `script.js` file, add this line of code to store all the buttons in a variable called `buttons`:
 
 ```JavaScript
 var buttons = document.getElementsByClassName('colourButton');
 ```
+
 --- /task ---
 
 `buttons` isn't a regular variable like `heading`, it is an **array**. An array is a list of things. The `buttons` array contains anything with the `class` name `colourButton`.
@@ -79,6 +85,7 @@ buttons[0]
 ```
 
 --- task ---
+
 Below where you created your `buttons` array, add this line of code, which takes the first button in the array and changes the button colour to blue using your `setButtonColour` function:
 
 ```JavaScript
