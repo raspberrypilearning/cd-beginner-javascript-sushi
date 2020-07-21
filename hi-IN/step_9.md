@@ -1,19 +1,19 @@
-## Challenge: fill the web page with the winning colour
+## चुनौती: वेब पृष्ठ को जीतने वाले रंग से भरें
 
-Your game works now, so here's a challenge for you: using your new coding knowledge, can you fill the web page with the winning colour when the player clicks the correct button?
+आपका गेम अब काम करता है, इसलिए यहां आपके लिए एक चुनौती है: अपने नए कोडिंग ज्ञान का उपयोग करके, क्या आप वेब पेज को विजेता रंग के साथ भर सकते हैं जब खिलाड़ी सही बटन पर क्लिक करता है?
 
-You need to know two other things to meet this challenge:
-1. The whole of the web page is contained in the `body` tag of the HTML file
-1. Just like you can select page elements by `id` and by `class`, you can select elements by `tagName`. And just like when you select by `class`, selecting by `tagName` can mean you select more than one element, so you'll get an array back (although in the case of the `body` tag, there will only ever be one element with that `tagName`).
+इस चुनौती को पूरा करने के लिए आपको दो अन्य बातों को जानना होगा:
+1. पूरा वेब पृष्ठ HTML फ़ाइल का टैग`body` में समाहित है
+1. जैसे आप `id ` और ` class ` द्वारा पेज एलिमेंट्स का चयन कर सकते हैं, आप ` tagName` द्वारा तत्वों का चयन कर सकते हैं । और जैसे आप ` class` द्वारा चयन करते हैं, ` tagName` द्वारा चयन करने का मतलब आप एक से अधिक तत्वों का चयन कर सकते हैं, इसलिए आपको एक array वापस मिल जाएगी (हालाँकि ` body` टैग के मामले में, उस ` tagName` के साथ केवल एक ही तत्व होगा)।
 
-Now try to use `document.getElementsByTagName()` to change the background of the page to the winning colour when the player clicks the correct button!
+अब ` document.getElementsByTagName () ` का उपयोग करने का प्रयास खिलाड़ी को सही बटन पर क्लिक करने पर पेज की पृष्ठभूमि को जीतने वाले रंग में बदलने के लिए करें!
 
 --- hints --- --- hint ---
 
-Remember that you already have a function for setting button colours? You can use the same function to change the background colour of the page `body`.
+याद रखें कि आपके पास पहले से ही बटन रंग सेट करने के लिए एक फ़ंक्शन है? पेज `body` के बैकग्राउंड कलर को बदलने के लिए आप उसी फ़ंक्शन का उपयोग कर सकते हैं ।
 
 --- /hint --- --- hint ---
 
-Update the background colour at the same time the message to the player gets updated.
+बैकग्राउंड कलर को उसी समय अपडेट करें जब खिलाड़ी का मैसेज अपडेट हो जाए।
 
 --- /hint --- --- /hints ---
