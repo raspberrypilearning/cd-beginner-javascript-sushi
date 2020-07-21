@@ -1,54 +1,54 @@
-## Change a button's colour
+## एक बटन का रंग बदलें
 
-At the moment, all the buttons on the web page are red. The whole game is based on having different coloured buttons, so you need a way to change a button's colour!
+फिलहाल, वेब पृष्ठ के सभी बटन लाल हैं। पूरा खेल अलग-अलग रंग के बटन रखने पर आधारित है, इसलिए आपको एक बटन के रंग को बदलने का एक तरीका चाहिए!
 
-Colours in computer programs are made up of three different values: R, G, and B, for red, green, and blue. Each value is between 0 and 255, and together, these three values define the 16777216 colours that a computer can display.
+कंप्यूटर प्रोग्राम में रंग तीन अलग-अलग वैल्युज़ से बने होते हैं: R, G, और B, लाल, हरे और नीले रंग के लिए। प्रत्येक मान 0 और 255 के बीच है, और एक साथ, ये तीन मान 16777216 रंगों को परिभाषित करते हैं जो एक कंप्यूटर प्रदर्शित कर सकता है।
 
-For example:
-- Red is (255, 0, 0)
-- Green is (0, 255, 0)
-- Blue is (0, 0, 255)
-- Purple, which is a mix of red and blue, is (255, 0, 255)
-- White is all three colour values at full brightness (255, 255, 255)
-- Black is all three values at zero brightness (0, 0, 0)
+उदाहरण के लिए:
+- लाल है (255, 0, 0)
+- हरा है (0, 255, 0)
+- नीला है (0, 0, 255)
+- बैंगनी, जो लाल और नीले रंग का मिश्रण है, (255, 0, 255)
+- सफ़ेद तीन रंग की पूर्ण चमक का मान है (255, 255, 255)
+- ब्लैक सभी तीन मूल्य की शून्य चमक पर हैं (0, 0, 0)
 
-So to change a button's colour, you tell the button to use three values between 0 and 255 as its background colour.
+तो एक बटन के रंग को बदलने के लिए, आप बटन को 0 और 255 के बीच के तीन मानों को इसके पृष्ठभूमि रंग के रूप में उपयोग करने के लिए कहते हैं।
 
-Because you need to do this a few times in the code for your game, you are going to write a **function** so that your JavaScript program can do most of the work for you.
+क्योंकि आपको अपने गेम के कोड में कुछ बार ऐसा करने की आवश्यकता है, इसलिये आप एक ** फ़ंक्शन**लिखेंगे ताकि आपका JavaScript प्रोग्राम आपके लिए ज्यादातर काम कर सके।
 
 --- collapse ---
 ---
-title: What is a function?
+title: फंक्शन क्या है?
 ---
 
-Code is often made up of functions, which are sets of instructions joined together with a name. Why are functions useful? Think about all the steps involved in making a cup of tea:
+कोड अक्सर फंक्शन से बना होता है, जो एक नाम के साथ जुड़ने वाले निर्देशों के सेट होते हैं। फंक्शन उपयोगी क्यों हैं? एक कप चाय बनाने में शामिल सभी चरणों के बारे में सोचें:
 
-  1. Get kettle
-  2. Put water in kettle
-  3. Boil water
-  4. Get teapot
-  5. Put teabag in teapot
-  6. Put water in teapot
-  7. Wait
-  8. Get cup
-  9. Pour tea into cup
+  1. केतली प्राप्त करें
+  2. केतली में पानी डालें
+  3. पानी उबालें
+  4. चायदानी लें
+  5. चायपत्ती को चायदानी में डालें
+  6. चायदानी में पानी डालें
+  7. प्रतीक्षा करें
+  8. कप लें
+  9. चाय को कप में डालें
 
-That's a lot of steps! It would be boring to have to tell someone to do each of them every time you wanted them to make a cup of tea. It's much easier to teach someone how to make a cup of tea once and then just ask them to 'make tea' the next time.
+यह बहुत सारे कदम है! हर बार जब आप किसी को एक कप चाय बनाने के लिए कहते, तो उन्हें यह बताना उबाऊ होगा। किसी को एक बार एक कप चाय बनाना सिखाना और उसके बाद अगली बार उन्हें सिर्फ 'चाय बनाने' के लिए कहना बहुत आसान है ।
 
-With coding it is similar: you create functions to do complex things with simple commands.
+कोडिंग के साथ इसी तरह है: आप साधारण कमांड के साथ जटिल चीजें करने के लिए फ़ंक्शन बनाते हैं।
 
 --- /collapse ---
 
 --- task ---
 
-Your function needs to:
+आपके फंक्शन को आवश्यकता है:
 
- - Take a button
- - Take three values, for red, green, and blue
- - Use those values to make a colour
- - Assign that colour as the background colour of the button
+ - एक बटन लें
+ - लाल, हरे और नीले रंग के लिए तीन वैल्युज़ लें
+ - रंग बनाने के लिए उन वैल्युज़ का उपयोग करें
+ - उस रंग को बटन के बैकग्राउंड कलर के रूप में असाइन करें
 
-Add this code to your `script.js` file to create this function using the name `setButtonColour`.
+इस कोड को अपने ` script.js` फ़ाइल में जोड़ें ` setButtonColour ` नाम का उपयोग इस फ़ंक्शन को बनाने के लिए करें।
 
 ```JavaScript
 function setButtonColour(button, red, green, blue){
@@ -58,17 +58,17 @@ function setButtonColour(button, red, green, blue){
 }
 ```
 
-To change the colour, the code changes the **CSS style rule** for the button.
+रंग बदलने के लिए कोड, ** CSS style rule** को बटन के लिए बदल देता है ।
 
 --- /task ---
 
-To use your function, you need to point it to a button.
+अपने फ़ंक्शन का उपयोग करने के लिए, आपको इसे एक बटन पर संकेत करना होगा।
 
-All the `button` tags in the HTML file have the `class` of `colourButton`. This `class` lets you select all the buttons as a group and then pick one for testing your function.
+HTML फ़ाइल में सभी ` बटन `टैग्स की ` class` ` colourButton ` है । यह `class` आपको एक समूह के रूप में सभी बटन का चयन करने देता है और फिर अपने फ़ंक्शन के परीक्षण के लिए एक चुनता है।
 
 --- task ---
 
-At the top of your `script.js` file, add this line of code to store all the buttons in a variable called `buttons`:
+आपके ` script.js ` फ़ाइल के शीर्ष पर, कोड की इस लाइन को ` बटन` नामक एक वेरियबल में सभी बटनों को संग्रहीत करने के लिए जोड़ें:
 
 ```JavaScript
 var buttons = document.getElementsByClassName('colourButton');
@@ -76,9 +76,9 @@ var buttons = document.getElementsByClassName('colourButton');
 
 --- /task ---
 
-`buttons` isn't a regular variable like `heading`, it is an **array**. An array is a list of things. The `buttons` array contains anything with the `class` name `colourButton`.
+` बटन ` ` शीर्षक`, जैसे एक नियमित वेरिएबल नहीं है यह एक **array** है । एक array चीजों की एक सूची है। ` बटन ` array में ` colourButton `नाम के` class` के साथ कुछ भी मौजूद है।
 
-You can read what's at any position of an array using the position number surrounded by square brackets `[]`. Since JavaScript starts counting from zero, you get the first item in the array like this:
+आप वर्ग कोष्ठक ` []` से घिरे स्थान संख्या का उपयोग करके किसी array के किसी भी स्थान पर क्या है पढ़ सकते हैं । चूंकि JavaScript शून्य से गिनना शुरू करती है, आपको array में पहला आइटम इस तरह से मिलता है:
 
 ```JavaScript
 buttons[0]
@@ -86,13 +86,13 @@ buttons[0]
 
 --- task ---
 
-Below where you created your `buttons` array, add this line of code, which takes the first button in the array and changes the button colour to blue using your `setButtonColour` function:
+नीचे जहाँ आपने अपने ` बटन ` array बनाए हैं, कोड की इस पंक्ति को जोड़ते हैं, जो array में पहला बटन लेती है और आपके ` setButtonColour ` फंक्शन का उपयोग करके बटन का रंग बदलकर नीला कर देती है:
 
 ```JavaScript
 setButtonColour(buttons[0], 0, 0, 255);
 ```
 --- /task ---
 
-Now watch your button change colour! If you're working offline, you need to reload the page in your browser to see the change.
+अब अपना बटन को रंग बदलते देखें! यदि आप ऑफ़लाइन काम कर रहे हैं, तो आपको परिवर्तन देखने के लिए अपने ब्राउज़र में पृष्ठ को फिर से लोड करना होगा।
 
-![The first button has changed from red to blue. The other five buttons remain red.](images/1blue.png)
+![पहला बटन लाल से नीले रंग में बदल गया है। अन्य पांच बटन लाल रहते हैं।](images/1blue.png)
