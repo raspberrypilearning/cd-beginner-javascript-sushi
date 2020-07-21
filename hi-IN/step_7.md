@@ -1,48 +1,48 @@
-## Pick and check the answer
+## जवाब चुनें और उसकी जाँच करें
 
-Your game now picks random colours every time it reloads. Next, you need to pick one colour to be the winning answer and make it so that, when the player clicks on the correct button, they get told that they've won.
+आपका खेल अब हर बार रिलोड होने पर अनोखे रंग चुनता है। अगला, आपको जीतने वाले उत्तर होने के लिए एक रंग चुनने की आवश्यकता है और इसे ऐसा करें कि, जब खिलाड़ी सही बटन पर क्लिक करे, तो उन्हें बताया जाए कि वे जीत गए हैं।
 
-To do this you need to:
+ऐसा करने के लिए आपको निम्न करने की आवश्यकता है:
 
- - Pick one of the random colours as the correct answer
- - Display the RGB colour values of that colour to the player
- - Make sure that when the player clicks on the winning button, a message tells them that they have won
+ - सही उत्तर के रूप में अनोखे रंगों में से एक चुनें
+ - खिलाड़ी को उस रंग के RGB रंग वैल्यू प्रदर्शित करें
+ - सुनिश्चित करें कि जब खिलाड़ी विजेता बटन पर क्लिक करता है, तो एक संदेश उन्हें बताता है कि वे जीत गए हैं
 
-The easiest way do the first two things is to pick a random __button__ as the correct answer, and to display its colour values.
+सबसे आसान तरीका है कि पहले दो चीजें करें, एक random__ बटन__ चुनें सही उत्तर के रूप में, और इसके रंग वैल्युज़ को प्रदर्शित करने के लिए।
 
-First, pick a button.
+सबसे पहले, एक बटन चुनें।
 
 --- task ---
 
-You already know how to pick a number at random, so now pick a number that describes the position of an item in the `buttons` array.
+आप पहले से ही जानते हैं कि किसी नंबर को अनोखे में कैसे चुना जाता है, इसलिए अब एक ऐसा नंबर चुनें जो किसी आइटम की स्थिति का वर्णन करता है ` बटन ` array में।
 
-Add this code just above your `for` loop:
+इस कोड को अपने `for`लूप के ठीक ऊपर जोड़ें:
 
 ```JavaScript
 var answerButton = Math.round(Math.random() * (buttons.length - 1));
 ```
 
-This line creates a variable called `answerButton` that stores the random number.
+यह पंक्ति `answerButton` नामक एक वेरिएबल बनाती है वह अनोखे संख्या संग्रहीत करता है।
 
 --- /task ---
 
-Next, you need to display the RGB colour values of that button.
+इसके बाद, आपको उस बटन के RGB रंग वैल्युज़ को प्रदर्शित करना होगा।
 
-These three values get created in the `for` loop runs that sets the button's colour, so that's the right time to get your code to display the values. And you need to make sure that the colour values only get displayed if the button the `for` loop is looping over is at position `answerButton` in the `buttons` array. To do that, you use an **`if` statement**.
+ये तीन मान `for` लूप में बनाए गए हैं जो बटन के रंग को सेट करता है, ताकि वैल्युज़ को प्रदर्शित करने के लिए अपना कोड प्राप्त करने का सही समय हो। और आपको यह सुनिश्चित करने की आवश्यकता है कि रंग वैल्यु केवल प्रदर्शित हो अगर बटन ` for` लूप ` बटन` array में ` answerButton ` पोजिशन पर लूपिंग कर रहा है। ऐसा करने के लिए, आप ** `if ` statement ** का उपयोग करते हैं ।
 
-An `if` statement is a bit of code that tests a particular condition, and if the test is successful, the code inside the `if` statement runs. Like in a `for` loop, the code inside an `if` statement is in braces (`{}`) following the condition.
+एक `if ` statement एक बिट कोड है जो एक विशेष स्थिति का परीक्षण करता है, और यदि परीक्षण सफल होता है, तो कोड ` if` के अंदर statement चलता है। जैसे `for ` लूप में, `if`कथन के अंदर कोड ब्रेसिज़ में है (` {} `) condition के बाद।
 
 --- task ---
 
-First, **delete** the line of code you wrote earlier to update the web page heading with your hello message. You're going to need to display the colour values in the heading!
+सबसे पहले, आपके द्वारा अपने हैलो संदेश के साथ वेब पेज शीर्षक को अपडेट करने के लिए पहले लिखी गई कोड की लाइन को ** delete**करें। आपको शीर्षक में रंग वैल्यू प्रदर्शित करने की आवश्यकता है!
 
 --- /task ---
 
 --- task ---
 
-Then update your `for` loop to add an `if` statement that checks if the loop is working with the `answerButton`. If yes, then the `if` statement should display the colour values as the page heading.
+फिर अपने `for ` लूप अपडेट करें ` if ` statement जोड़ने के लिए जो चेक करता है की अगर लूप ` answerButton `के साथ काम कर रहा है । यदि हाँ, तो `if ` पेज शीर्षक के रूप में स्टेटमेंट को रंग वैल्यू प्रदर्शित करना चाहिए।
 
-It should look like this:
+यह ऐसा दिखाई देना चाहिए:
 
 ```JavaScript
 for (var i = 0; i < buttons.length; i++) {
@@ -59,17 +59,17 @@ for (var i = 0; i < buttons.length; i++) {
 }
 ```
 
-Notice that you can use `${red}` to include the value of the `red` variable inside your text string, and that the same is true for the other colour value variables.
+ध्यान दें कि आप `${red} ` उपयोग कर सकते हैं` लाल`वेरिएबल के वैल्यू को स्ट्रिंग के अंदर शामिल करने के लिए और वही अन्य रंग वैल्यू वेरिएबल के लिए सच है।
 
 --- /task ---
 
-Now you need to add code so that your game knows which button the player clicks and displays a message in response.
+अब आपको कोड जोड़ने की आवश्यकता है ताकि आपका खेल जानता हो कि कौन सा बटन क्लिक करता है और प्रतिक्रिया में संदेश प्रदर्शित करता है।
 
-The first thing to do is selecting the element on the web page where the message will show.
+पहली बात यह है कि वेब पृष्ठ पर तत्व का चयन करना है जहां संदेश दिखाई देगा।
 
 --- task ---
 
-Above your `for` loop, create a variable called `answerMessage` to store the element on the web page that has an `id` of `answer` (one of the headings has this `id`). Use this code to do that:
+अपने ` for` लूप के ऊपर, एक वैरिएबल बनाएं जिसका नाम ` answerMessage` है वेब पेज पर तत्व को संग्रहीत करने के लिए जिसकी `id` `answer`है (शीर्षकों में से एक में यह `id` है)। इस कोड का उपयोग यह करने के लिए करें:
 
 ```JavaScript
 var answerMessage = document.getElementById('answer');
@@ -77,16 +77,16 @@ var answerMessage = document.getElementById('answer');
 
 --- /task ---
 
-Next, each button needs an **event listener**. Event listeners are pieces of code that let your game wait for an action the player takes and then do something in response. You want your game to know if the player clicks a button, so the event listeners you need are going to wait for clicks.
+अगला, प्रत्येक बटन को एक ** ईवेंट श्रोता** की आवश्यकता होती है । इवेंट श्रोता कोड के टुकड़े हैं जो आपके गेम को एक खिलाड़ी द्वारा की जाने वाली कार्रवाई की प्रतीक्षा करते हैं और फिर प्रतिक्रिया में कुछ करते हैं। आप चाहते हैं कि आपका गेम यह पता करे कि क्या खिलाड़ी एक बटन पर क्लिक करता है, इसलिए आपको जिन इवेंट श्रोताओं की आवश्यकता है, वे क्लिक का इंतजार करने वाले हैं।
 
 --- task ---
 
-Inside the `for` loop, insert the following code to add a listener for clicks to each button, and to give the listener a function to run when a click happens.
+`for`लूप के अंदर, प्रत्येक बटन पर क्लिक के लिए एक श्रोता जोड़ने के लिए, और एक क्लिक होने पर चलने के लिए श्रोता को एक फ़ंक्शन देने के लिए निम्न कोड डालें।
 
-The function includes a few things:
- - An `if` statement, which you already understand, although this statement includes an `else` part that runs only if the test of the condition is unsuccessful
- - `innerHTML` updates the text of the web page element stored in `answerMessage`
- - The special `this` keyword, which means, in this case, 'the button that was clicked'
+फंक्शन में कुछ चीजें शामिल हैं:
+ - एक `if ` statement, जिसे आप पहले से ही समझते हैं, हालांकि इस कथन में `else` हिस्सा शामिल है जो केवल तभी चलता है जब हालत का परीक्षण असफल हो
+ - ` innerHTML ` ` answerMessage` में संग्रहीत वेब पेज तत्व के पाठ को अद्यतन करता है
+ - विशेष `this` कीवर्ड, जिसका अर्थ है, इस मामले में, 'बटन पर क्लिक किया गया'
 
 ```JavaScript
 buttons[i].addEventListener('click', function(){
@@ -102,10 +102,10 @@ buttons[i].addEventListener('click', function(){
 
 --- collapse ---
 ---
-title: What your code should look like now
+title: आपका कोड ऐसा दिखना चाहिए:
 ---
 
-Look at the following code to see how everything in the `script.js` program fits together:
+निम्नलिखित कोड को देखें कि कैसे सब कुछ ` script.js`में है, कार्यक्रम एक साथ फिट बैठता है:
 
 ```JavaScript
 function makeColourValue() {
@@ -153,10 +153,10 @@ buttons[i].addEventListener('click', function(){
 ```
 
 
-Your game should look like this now:
+आपका कोड इस प्रकार दिखना चाहिए:
 
-![The game now shows six buttons of different colours, with a sequence of three comma-seperated numbers above them.](images/preReset.png)
+![खेल अब अलग-अलग रंगों के छह बटन दिखाता है, उनके ऊपर तीन अल्पविराम से अलग संख्याओं के अनुक्रम के साथ।](images/preReset.png)
 
 --- /collapse ---
 
-Reload the web page and play your game! At the moment, you have to reload the page every time you want to play a new round.
+वेब पेज को पुनः लोड करें और अपना गेम खेलें! फिलहाल, आपको हर बार नया राउंड खेलना चाहते हुए पृष्ठ को फिर से लोड करना होगा।
