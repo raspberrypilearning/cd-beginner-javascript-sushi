@@ -1,20 +1,20 @@
-## Challenge: pick your own colours
+## चुनौती: अपने खुद के रंग चुनें
 
-Use your `setButtonColour` function to change the colour of the button to, for example:
-  - Green
-  - Purple
-  - Yellow
+अपने ` setButtonColour ` फंक्शन का उपयोग बटन का रंग बदलने के लिए करें उदाहरण के लिए:
+  - हरा
+  - बैंगनी
+  - पीला
 
 --- hints --- --- hint ---
 
-Changing the values of `red`, `green`, and `blue` that you pass to `setButtonColour` changes the colour of the button.
+` लाल `, ` हरा `, और ` नीला ` के वैल्युज़ को बदल के ` setButtonColour `में आप पास करनें से, बटन का रंग बदल जाएगा।
 
 --- /hint --- --- hint ---
 
-Colour values go from `0` to `255`. Note that you are mixing colours of light, not colours of paint, so some of the results might not be what you expect!
+रंग के मान ` 0`से ` 255 ` हो जाते हैं । ध्यान दें कि आप प्रकाश के रंगों को मिला रहे हैं, रंगों के रंगों को नहीं, इसलिए शायद कुछ परिणाम वे नहीं हो जो आप उम्मीद करते हैं!
 
 --- /hint --- --- hint ---
 
-Green is one of the three primary colours you're mixing. To create purple and yellow, mix two of the three primary colours in equal amounts.
+ग्रीन उन तीन प्राथमिक रंगों में से एक है जिन्हें आप मिला रहे हैं। बैंगनी और पीला बनाने के लिए, तीन में से दो प्राथमिक रंगों को समान मात्रा में मिलाएं।
 
 --- /hint --- --- /hints ---
