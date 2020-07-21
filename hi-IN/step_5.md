@@ -1,12 +1,12 @@
-## Random colours
+## अनोखे रंग
 
-Now you can select a button and change its colour to whatever you want! But to make your game work, you need random colours. That's easy, because JavaScript can pick random numbers for you, and you can make sure they're between `0` and `255`.
+अब आप एक बटन का चयन कर सकते हैं और उसका रंग बदल सकते हैं जो आप चाहते हैं! लेकिन अपने खेल को काम करने के लिए, आपको अनोखे रंगों की आवश्यकता होती है। यह आसान है, क्योंकि JavaScript आपके लिए अनोखी संख्या चुन सकता है, और आप यह सुनिश्चित कर सकते हैं कि वे ` 0 ` और ` 255 `के बीच हैं ।
 
-The best way to do this in your program is to write another function that creates a random colour value (a number between `0` and `255`) and **returns** it. When a function returns a value, you can store the value for later or use it immediately.
+अपने प्रोग्राम में ऐसा करने का सबसे अच्छा तरीका एक और फ़ंक्शन लिखना है जो अनोखे रंग मान (` 0 ` और ` 255 ` के बीच की संख्या) बनाता है और यह** रिटर्न ** करता है। जब कोई फ़ंक्शन वैल्यू लौटाता है, तो आप वैल्यू को बाद के लिए संग्रहीत कर सकते हैं या तुरंत उपयोग कर सकते हैं।
 
 --- task ---
 
-Use the following code to create a function called `makeColourValue` that uses JavaScript's built-in `Math.random` and `Math.round` functions to generate a random number between `0` and `255`, and that then returns this value.
+` makeColourValue` नामक फ़ंक्शन बनाने के लिए निम्न कोड का उपयोग करें जो JavaScript के अंतर्निहित ` Math.random ` और ` Math.round ` फंक्शन का उपयोग` 0 ` और ` 255 `, के बीच एक यादृच्छिक संख्या उत्पन्न करने के लिए करता है और फिर यह वैल्यू लौटाता है।
 
 ```JavaScript
 function makeColourValue(){
@@ -18,18 +18,18 @@ function makeColourValue(){
 
 --- collapse ---
 ---
-title: JavaScript and random numbers
+title: JavaScript और अनोखी संख्या
 ---
 
-JavaScript has a built-in function called `Math.random` that produces a random decimal number between `0` and `1`. By multiplying this number, you can get a random number between `0` and any other number. For example, to get a number between `0` and `100`, you multiply the result of `Math.random` by `100`, like this:
+Javascript में एक अंतर्निहित फ़ंक्शन है जिसे ` Math.random `कहा जाता है जो ` 0 ` और ` 1 `के बीच एक अनोखी दशमलव संख्या पैदा करता है । इस संख्या को गुणा करके, आप ` 0` और कोई अन्य संख्या के बीच एक अनोखी संख्या प्राप्त कर सकते हैं । उदाहरण के लिए, ` 0` और ` 100 ` के बीच एक संख्या प्राप्त करने के लिए, आप ` Math.random ` का परिणाम ` 100` द्वारा गुणा करें, इस तरह:
 
 ```JavaScript
 myRandomNumber = Math.random()*100;
 ```
 
-This works because the smallest random number `Math.random` can create is `0`, and `0 * 100=0`. The largest random number is `1`, and `1 * 100 = 100`. And with any random number in between, you get a number in between `0` and `100`. For example, `0.25 * 100 = 25`.
+यह काम करता है क्योंकि सबसे छोटी अनोखी संख्या ` Math.random ` बना सकते हैं ` 0 `, और ` 0 * 100 = 0 ` । सबसे बड़ी अनोखी संख्या है` 1 `, और ` 1 * 100 = 100 ` । और बीच में किसी भी अनोखी संख्या के साथ, आपको ` 0 ` और ` 100 ` के बीच एक संख्या मिलती है । उदाहरण के लिए, ` 0.25 * 100 = 25 ` ।
 
-`Math.random` produces a **decimal** number, for example `0.245834`. For your game, you only want whole numbers (integers), because only those work as colour values. So you need to round the result of `Math.random`. Luckily, JavaScript has a built-in function called `Math.round` to help you round decimal number. So to get a whole number between `0` and `100`, you would write:
+` math.random ` एक ** दशमलव** संख्या पैदा करता है, उदाहरण के लिए ` 0.245834 ` । अपने खेल के लिए, आप केवल पूरे नंबर (पूर्णांक) चाहते हैं, क्योंकि केवल वे ही रंग वैल्यू के रूप में काम करते हैं। इसलिए आपको ` Math.random` के परिणाम को गोल करना होगा । सौभाग्य से, JavaScript में एक अंतर्निहित फ़ंक्शन है जिसे ` Math.round`  कहा जाता है दशमलव संख्या को गोल करने में आपकी सहायता करने के लिए। तो ` 0 ` और ` 100 ` के बीच एक पूरी संख्या प्राप्त करने के लिए, आप लिखेंगे:
 
 ```JavaScript
 myRandomNumber = Math.round(Math.random()*100);
@@ -37,11 +37,11 @@ myRandomNumber = Math.round(Math.random()*100);
 
 --- /collapse ---
 
-Now it's time to use this new function.
+अब इस नए फ़ंक्शन का उपयोग करने का समय है।
 
 --- task ---
 
-Create three variables, named `red`, `green`, and `blue`, with random colours picked by your `makeColourValue` function. Then update the code that sets the button colour so that it uses these three variables to set the button's colour.
+तीन वेरिएबल बनाएं, जिसका नाम ` लाल`, ` हरा `, और ` नीला ` है, आपके ` makeColourValue` फंक्शन के द्वारा चुने हुए अनोखी रंग के साथ । फिर बटन को सेट करने वाले कोड को अपडेट करें ताकि वह बटन के रंग को सेट करने के लिए इन तीन वेरिएबल का उपयोग करे।
 
 ```JavaScript
 var red = makeColourValue();
@@ -53,6 +53,6 @@ setButtonColour(buttons[0], red, green, blue);
 
 --- /task ---
 
-Now reload the web page a few times and see the button change colour every time! If you are working online, reload the page by clicking on the **Autorun** button, and if you're working offline, reload the page by refreshing your browser.
+अब वेब पेज को कुछ बार फिर से लोड करें और हर बार बटन को कलर बदलते देखें! यदि आप ऑनलाइन काम कर रहे हैं, तो पृष्ठ को ** ऑटोरन ** बटन पर क्लिक करके पुनः लोड करें, और यदि आप ऑफ़लाइन काम कर रहे हैं, तो अपने ब्राउज़र को ताज़ा करके पृष्ठ को पुनः लोड करें।
 
-![The Trinket menu bar with the Autorun button highlighted](images/tktReload.png)
+![ऑटोरन बटन के साथ ट्रिंकेट मेन्यू बार हाइलाइट किया गया](images/tktReload.png)
