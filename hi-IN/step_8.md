@@ -1,12 +1,12 @@
-## Reset the game
+## खेल रीसेट करें
 
-At the moment, you have to reload your web page every time you want to reset the game. There is a **Reset game** button on the web page, but clicking the button doesn't have any effect.
+फिलहाल, आपको हर बार नया राउंड खेलना चाहते हुए पृष्ठ को फिर से लोड करना होगा। एक ** रीसेट गेम **वेब पृष्ठपर बटन है, लेकिन बटन पर क्लिक करने से कोई प्रभाव नहीं पड़ता है।
 
-To make the button work, you are going to connect an event listener to it and wrap your game code up in a function for that listener to call.
+बटन को काम करने के लिए, आप इसे एक इवेंट श्रोता से कनेक्ट करने जा रहे हैं और कॉल करने के लिए उस श्रोता के लिए एक फ़ंक्शन में अपना गेम कोड रैप करें।
 
 --- task ---
 
-The game code needed to reset the game is the code that sets the `answerButton` variable, and the `for` loop. Take those piece of your code and put them in a function called `startGame`.
+गेम को रीसेट करने के लिए आवश्यक गेम कोड वह कोड होता है जो ` answerButton` वेरिएबल और ` for` लूप सेट करता है। अपने कोड के उन टुकड़ों को लें और उन्हें ` startGame` नामक फ़ंक्शन में रखें ।
 
 ```JavaScript
 function startGame() {
@@ -40,11 +40,11 @@ function startGame() {
 
 --- /task ---
 
-If you reload the web page now, nothing seems to be working! That's because, just like all the other functions in your program, you need to **call** `startGame`, otherwise your game doesn't start.
+यदि आप अभी वेब पेज को पुनः लोड करते हैं, तो कुछ भी काम नहीं करता है! ऐसा इसलिए, क्योंकि आपके कार्यक्रम के अन्य सभी कार्यों की तरह, आपको ` startGame ` ** call** करने की आवश्यकता है, अन्यथा आपका खेल शुरू नहीं होता है।
 
 --- task ---
 
-Add a line __at the very end__ of your program to call the `startGame` function.
+` startGame ` फंक्शन को कॉल करने के लिए अपने प्रोग्राम के __ अंत में एक __पंक्ति जोड़ें ।
 
 ```JavaScript
 startGame();
@@ -52,11 +52,11 @@ startGame();
 
 --- /task ---
 
-The `startGame` function also needs to clear the `answerMessage` element of the web page, so that there is no message when a new round of the game begins.
+` startGame ` फ़ंक्शन को वेब पृष्ठ के` answerMessage`तत्व को भी साफ़ करना होगा, ताकि खेल का एक नया दौर शुरू होने पर कोई संदेश न हो।
 
 --- task ---
 
-To clear the element, add the following line **at the very beginning** of the `startGame` function.
+तत्व को साफ़ करने के लिए, ` startGame ` फंक्शन के शुरुआत में निम्न पंक्ति ** को जोड़ें ** ।
 
 ```JavaScript
 answerMessage.innerHTML = "";
@@ -64,26 +64,26 @@ answerMessage.innerHTML = "";
 
 --- /task ---
 
-Clicking the **Reset game** button still doesn't do anything. That's because the button needs an event listener which calls `startGame`. You already know how to add event listeners to make buttons respond to clicks, so if you want to, you can try to do that by yourself, before looking at the instructions!
+** रीसेट गेम** बटन पर क्लिक करना अभी भी कुछ नहीं करता है। ऐसा इसलिए है क्योंकि बटन को एक इवेंट श्रोता की आवश्यकता है जो कॉल करता है ` startGame ` । आप पहले से ही जानते हैं कि बटनों पर क्लिक करने के लिए इवेंट श्रोताओं को कैसे जोड़ना है, इसलिए यदि आप चाहते हैं, तो आप निर्देशों को देखने से पहले खुद से ऐसा करने की कोशिश कर सकते हैं!
 
 --- task ---
 
-Making the **Reset game** button work involves two steps:
- - Select the button using its `id`, which is `resetButton`
- - Add a listener to the button to call the `startGame` function when the button is clicked
+** गेम रीसेट ** बटन के काम में दो चरण शामिल हैं:
+ - इसके ` id` का उपयोग करके बटन का चयन करें, जो `resetButton ` है
+ - बटन क्लिक करने पर ` startGame ` फंक्शन को कॉल करने के लिए एक श्रोता को बटन पर जोड़ें
 
-Add this line to the end of your program to do that:
+ऐसा करने के लिए अपने कार्यक्रम के अंत में इस पंक्ति को जोड़ें:
 
 ```JavaScript
 document.getElementById('resetButton').addEventListener('click', startGame);
 ```
 
-Do you see that the listener gets added directly to the button here, without the button first being stored in a variable?
+क्या आप देखते हैं कि श्रोता सीधे यहां बटन में जुड़ जाता है, बिना बटन पहले एक वेरिएबल में संग्रहीत किया जा रहा है?
 
-I decided to code it this way because the game code doesn't need the **Reset game** button in any other place, so I can save the memory necessary to store the variable.
+मैंने इसे इस तरह कोड करने का फैसला किया क्योंकि गेम कोड को ** रीसेट गेम **बटन की किसी अन्य स्थान पर की आवश्यकता नहीं है, इसलिए मैं वेरिएबल को संग्रहीत करने के लिए आवश्यक मेमोरी को बचा सकता हूं।
 
-The other method of first storing the button in a variable and then adding a listener works just fine too.
+पहले एक वेरिएबल में बटन को संग्रहीत करने की दूसरी विधि और फिर एक श्रोता को जोड़ना भी ठीक काम करता है।
 
 --- /task ---
 
-Now try out your game! When you get the right answer, click the **Reset game** button and check everything works like it should.
+अब अपने खेल की कोशिश करो! जब आपको सही उत्तर मिल जाए, तो ** रीसेट गेम ** बटन पर क्लिक करें और सब कुछ सही तरह काम कर रहा है यह चेक करें।
