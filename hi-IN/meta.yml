@@ -1,8 +1,9 @@
 ---
 title: रंग का अनुमान लगाओ!
 hero_image: images/banner.png
-description: एक खेल बनाओ जहाँ आप सही रंग चुनते हैं, JavaScript सीखना शुरू करने के लिए
-theme: yellow #possible values: blue, green, navy, orange, red, turquoise, violet, yellow
+description: एक खेल बनाओ जहाँ आप सही रंग चुनते हैं, JavaScript सीखना शुरू करने के
+  लिए
+theme: yellow
 duration: 2
 listed: true
 ingredient: false
@@ -10,14 +11,16 @@ copyedit: true
 version: 3
 last_tested: 2017-01-01
 steps:
-  - title: परिचय
-  - title: शुरू करें
-  - title: एक बटन का रंग बदलें
-  - title: "चुनौती: अपने खुद के रंग चुनें"
-    challenge: true
-  - title: अनोखे रंग
-  - title: सभी बटन बदलें
-  - title: जवाब चुनें और उसकी जाँच करें
-  - title: खेल रीसेट करें
-  - title: "चुनौती: वेब पृष्ठ को जीतने वाले रंग से भरें"
-    challenge: true
+- title: परिचय
+  completion: engaged
+- title: शुरू करें
+- title: एक बटन का रंग बदलें
+- title: 'चुनौती: अपने खुद के रंग चुनें'
+  challenge: true
+- title: अनोखे रंग
+- title: सभी बटन बदलें
+- title: जवाब चुनें और उसकी जाँच करें
+  completion: internal
+- title: खेल रीसेट करें
+- title: 'चुनौती: वेब पृष्ठ को जीतने वाले रंग से भरें'
+  challenge: true
