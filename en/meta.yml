@@ -11,15 +11,17 @@ version: 3
 last_tested: 2017-01-01
 steps:
 - title: Introduction
-  completion: engaged
 - title: Get started
 - title: Change a button's colour
+  completion:
+  - engaged
 - title: 'Challenge: pick your own colours'
   challenge: true
 - title: Random colours
 - title: Change all the buttons
 - title: Pick and check the answer
-  completion: internal
 - title: Reset the game
+  completion:
+  - internal
 - title: 'Challenge: fill the web page with the winning colour'
   challenge: true

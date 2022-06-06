@@ -12,15 +12,17 @@ version: 3
 last_tested: 2017-01-01
 steps:
 - title: परिचय
-  completion: engaged
 - title: शुरू करें
 - title: एक बटन का रंग बदलें
+  completion:
+  - engaged
 - title: 'चुनौती: अपने खुद के रंग चुनें'
   challenge: true
 - title: अनोखे रंग
 - title: सभी बटन बदलें
 - title: जवाब चुनें और उसकी जाँच करें
-  completion: internal
 - title: खेल रीसेट करें
+  completion:
+  - internal
 - title: 'चुनौती: वेब पृष्ठ को जीतने वाले रंग से भरें'
   challenge: true
