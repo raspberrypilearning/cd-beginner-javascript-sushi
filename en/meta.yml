@@ -4,7 +4,7 @@ hero_image: images/banner.png
 description: Make a game where you pick the right colour, to start learning JavaScript
 theme: yellow
 duration: 2
-listed: true
+listed: false
 ingredient: false
 copyedit: true
 version: 3
